@@ -1,0 +1,28 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /mine/login
+    request:
+        headers:
+            appid: admin_android
+            content-type: application/json
+            device-key: B68A614325FB557A10345DDCE0659D59FC5ADC5496A7DE9D63101C348DBD2C82
+            user-agent: okhttp/3.12.1
+            version: '83'
+            x-requested-with: XMLHttpRequest
+        json:
+            account: hubiao33
+            password: koVYrjRIJn3bo/wnLGtUwFcTZYH5ray8Q7zc5n/AmTJMQT0NL6IgKQ9HzaBK6X7BijHrGQA9aFYeAdAAaSJzCE0PFb2NP0KS/g/7oz/NEaumezYhlGICD2zUE3X14BpNOfDl6exi3iFCg7Q/lu6VuB3OVAcZLHKkNaEN39toWCA=
+        method: POST
+        url: https://uat-afl-erp-api.aihuishou.com/mine/login
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - content.code
+        - 200
+    -   eq:
+        - content.resultMessage
+        - ''

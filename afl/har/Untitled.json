@@ -1,0 +1,47 @@
+{
+    "config": {
+        "name": "testcase description",
+        "variables": {}
+    },
+    "teststeps": [
+        {
+            "name": "/mine/login",
+            "request": {
+                "url": "https://uat-afl-erp-api.aihuishou.com/mine/login",
+                "method": "POST",
+                "headers": {
+                    "x-requested-with": "XMLHttpRequest",
+                    "appid": "admin_android",
+                    "version": "80",
+                    "device-key": "B68A614325FB557A10345DDCE0659D59FC5ADC5496A7DE9D63101C348DBD2C82",
+                    "content-type": "application/json",
+                    "user-agent": "okhttp/3.12.1"
+                },
+                "json": {
+                    "account": "hubiao",
+                    "password": "EYuZO9y6SfZjJ9yYXEUcbuyn+CBDs+PmCVSIwyrsS4WrhiYAwJHbBdzPsGua2HWeRfe08x4h/vqvVFqGQM8sOSzI6LErKUD/LjhRhxd/3h4NzTqKfLf4LwiREVfF8DtKE59GLZlWmLMVeR6rRkwnmWGAlJLJzGXHZR+nfADp83w="
+                }
+            },
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.resultMessage",
+                        ""
+                    ]
+                }
+            ]
+        }
+    ]
+}
